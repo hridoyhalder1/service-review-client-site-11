@@ -14,9 +14,7 @@ const Header = () => {
 
     const menuItems = <>
         <li><Link to='/' className=' cursor-pointer font-semibold' >Home</Link></li>
-        {/* <li><Link to='/login' className=' cursor-pointer font-semibold' >Login</Link></li>
-        <li><Link to='/signup' className=' cursor-pointer font-semibold' >SignUp</Link></li>
-        <button onClick={handleLogOut}>Log out</button> */}
+        
     </>
 
     return (
@@ -45,6 +43,8 @@ const Header = () => {
                                 <>
                                     
                                     <button className=' cursor-pointer font-semibold' onClick={handleLogOut}>Log out</button>
+                                    <li><Link to='/myreviews' className=' cursor-pointer font-semibold' >My Reviews</Link></li>
+                                    <li><Link to='/addservice' className=' cursor-pointer font-semibold' >Add Service</Link></li>
                                 </>
                                 :
                                 <>
