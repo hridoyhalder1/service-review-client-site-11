@@ -6,6 +6,8 @@ import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Header = () => {
     const { logOut, user } = useContext(AuthContext);
+
+    // log out auth setup
     const handleLogOut = () => {
         logOut()
             .then(() => { })
@@ -14,7 +16,23 @@ const Header = () => {
 
     const menuItems = <>
         <li><Link to='/' className=' cursor-pointer font-semibold' >Home</Link></li>
-        
+        <li><Link to='/blog' className=' cursor-pointer font-semibold' >Blog</Link></li>
+        {
+            user?.uid ?
+                <>
+
+                    <button className=' cursor-pointer font-semibold' onClick={handleLogOut}>Log out</button>
+                    <li><Link to='/myreviews' className=' cursor-pointer font-semibold' >My Reviews</Link></li>
+                    <li><Link to='/addservice' className=' cursor-pointer font-semibold' >Add Service</Link></li>
+                </>
+                :
+                <>
+                    <li><Link to='/login' className=' cursor-pointer font-semibold' >Login</Link></li>
+                    <li><Link to='/signup' className=' cursor-pointer font-semibold' >SignUp</Link></li>
+                </>
+        }
+
+
     </>
 
     return (
@@ -38,10 +56,10 @@ const Header = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
-                        {
+                        {/* {
                             user?.uid ?
                                 <>
-                                    
+
                                     <button className=' cursor-pointer font-semibold' onClick={handleLogOut}>Log out</button>
                                     <li><Link to='/myreviews' className=' cursor-pointer font-semibold' >My Reviews</Link></li>
                                     <li><Link to='/addservice' className=' cursor-pointer font-semibold' >Add Service</Link></li>
@@ -51,7 +69,7 @@ const Header = () => {
                                     <li><Link to='/login' className=' cursor-pointer font-semibold' >Login</Link></li>
                                     <li><Link to='/signup' className=' cursor-pointer font-semibold' >SignUp</Link></li>
                                 </>
-                        }
+                        } */}
                     </ul>
                 </div>
                 <div className="navbar-end p-0">
