@@ -54,30 +54,16 @@ const Header = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal p-0">
-                        {/* {
-                            user?.uid ?
-                                <>
-
-                                    <button className=' cursor-pointer font-semibold' onClick={handleLogOut}>Log out</button>
-                                    <li><Link to='/myreviews' className=' cursor-pointer font-semibold' >My Reviews</Link></li>
-                                    <li><Link to='/addservice' className=' cursor-pointer font-semibold' >Add Service</Link></li>
-                                </>
-                                :
-                                <>
-                                    <li><Link to='/login' className=' cursor-pointer font-semibold' >Login</Link></li>
-                                    <li><Link to='/signup' className=' cursor-pointer font-semibold' >SignUp</Link></li>
-                                </>
-                        } */}
-                    </ul>
-                </div>
+                
                 <div className="navbar-end p-0">
 
                     {user?.photoURL ?
                         <img
                             src={user?.photoURL}
                             alt=""
+                            className=' rounded-full w-10 cursor-pointer'
+                            title={user?.displayName}
+
                         />
                         : <FaUser></FaUser>
                     }
