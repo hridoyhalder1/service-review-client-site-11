@@ -3,10 +3,11 @@ import login1 from '../../assests/icon/login1.jpg';
 import { FaGoogle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
 
-    const { login } = useContext(AuthContext);
+    const { login, providerLogin } = useContext(AuthContext);
 
     const handleLogin = event => {
         event.preventDefault();
@@ -25,9 +26,14 @@ const Login = () => {
     }
 
     // google authentication
-
+    const googleProvider = new GoogleAuthProvider();
     const handleGoogleSignIn = () => {
-        
+        providerLogin(googleProvider)
+        .then(result => {
+            const user= result.user;
+            console.log(user);
+        })
+        .catch(error => console.error(error))
     }
 
     return (
@@ -60,7 +66,7 @@ const Login = () => {
                     </form>
                     <p className=' ml-8'>Don't have an account? Please <Link className=' text-orange-600' to='/signup'>SignUp</Link> </p>
                     <p className=' text-center font-bold text-indigo-700'>Or Login With</p>
-                    <span onClick={handleGoogleSignIn} className=' text-center pl-48 pt-4 text-white pb-3'> <FaGoogle /> </span>
+                    <span  className=' text-center pl-48 pt-4 text-white pb-3 cursor-pointer'> <FaGoogle onClick={handleGoogleSignIn} /> </span>
                 </div>
             </div>
         </div>

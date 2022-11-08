@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
+
 
 const Header = () => {
+    const { logOut, user } = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
 
     const menuItems = <>
         <li><Link to='/' className=' cursor-pointer font-semibold' >Home</Link></li>
-        <li><Link to='/login' className=' cursor-pointer font-semibold' >Login</Link></li>
+        {/* <li><Link to='/login' className=' cursor-pointer font-semibold' >Login</Link></li>
         <li><Link to='/signup' className=' cursor-pointer font-semibold' >SignUp</Link></li>
+        <button onClick={handleLogOut}>Log out</button> */}
     </>
 
     return (
@@ -28,9 +38,34 @@ const Header = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <Link to='/' className="btn">Get started</Link>
+                <div className="navbar-center hidden lg:flex">
+                    <ul className="menu menu-horizontal p-0">
+                        {
+                            user?.uid ?
+                                <>
+                                    
+                                    <button className=' cursor-pointer font-semibold' onClick={handleLogOut}>Log out</button>
+                                </>
+                                :
+                                <>
+                                    <li><Link to='/login' className=' cursor-pointer font-semibold' >Login</Link></li>
+                                    <li><Link to='/signup' className=' cursor-pointer font-semibold' >SignUp</Link></li>
+                                </>
+                        }
+                    </ul>
                 </div>
+                <div className="navbar-end p-0">
+
+                    {user?.photoURL ?
+                        <img
+                            src={user?.photoURL}
+                            alt=""
+                        />
+                        : <FaUser></FaUser>
+                    }
+
+                </div>
+
             </div>
         </div>
     );
