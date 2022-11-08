@@ -9,7 +9,7 @@ const SignUp = () => {
     const {createUser} = useContext(AuthContext);
 
     const handleSignUp = event => {
-        event.preventDefault()
+        event.preventDefault();
         const form = event.target;
         const name = form.name.value;
         const email = form.email.value;
@@ -17,11 +17,12 @@ const SignUp = () => {
         console.log(name ,email, password);
 
         createUser(email, password)
-        .then(result => {
+        .then( result => {
             const user = result.user;
             console.log(user);
+            form.reset();
         })
-        .catch(error => console.error(error))
+        .catch( e => console.error(e));
     }
 
 
