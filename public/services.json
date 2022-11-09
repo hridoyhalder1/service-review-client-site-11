@@ -1,6 +1,5 @@
 [
     {
-        "_id": "635a0c0b64a6d231228942ae",
         "service_id": "04",
         "title": "HTML5",
         "img": "https://www.tutorialrepublic.com/lib/images/html-illustration.png",
@@ -9,7 +8,6 @@
         
     },
     {
-        "_id": "635a0c0b64a6d231228942af",
         "service_id": "05",
         "title": "CSS3",
         "img": "https://www.tutorialrepublic.com/lib/images/css-illustration.png",
@@ -17,7 +15,6 @@
         "description": "This CSS tutorial series covers all the fundamentals of CSS, including the idea of selectors, methods of setting colors and backgrounds, way of formatting fonts and text, styling UI elements such as hyperlinks, lists, tables, etc. as well as the concept of CSS box model, and so on. Once you're comfortable with the basics, you'll move on to next level that explains the way of setting dimension and alignment of elements, methods for positioning elements on a web page, using image sprites, as well as the concept of relative and absolute units, visual formatting model, display and visibility, layers, pseudo classes and elements, media dependent style sheets, and so on.Finally, you'll explore some advanced features introduced in CSS3 like gradient colors, drop shadow effect, 2D and 3D transforms, alpha transparency, as well as the method of creating transition and animation effect, flex layouts, filter effect, the concept of media queries, and more."        
     },
     {
-        "_id": "635b591a1dafe382a9da8c96",
         "service_id": "01",
         "title": "Bootstrap 5",
         "img": "https://www.tutorialrepublic.com/lib/images/bootstrap-5.0-illustration.png",
@@ -26,7 +23,6 @@
        
     },
     {
-        "_id": "635b5afc1dafe382a9da8c98",
         "service_id": "02",
         "title": "JAVASCRIPT",
         "img": "https://www.tutorialrepublic.com/lib/images/javascript-illustration.png",
@@ -35,7 +31,6 @@
         
     },
     {
-        "_id": "635b5b691dafe382a9da8c99",
         "service_id": "03",
         "title": "JQUERY",
         "img": "https://www.tutorialrepublic.com/lib/images/jquery-illustration.png",
@@ -44,7 +39,6 @@
         
     },
     {
-        "_id": "635b5ba51dafe382a9da8c9a",
         "service_id": "06",
         "title": "SQL",
         "img": "https://www.tutorialrepublic.com/lib/images/sql-illustration.png",

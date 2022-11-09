@@ -11,12 +11,14 @@ const AuthProvider = ({children}) => {
 
     // create user with sign up
     const createUser = ( email, password ) => {
-        return createUserWithEmailAndPassword(auth, email, password)
+        setLoading(true);
+        return createUserWithEmailAndPassword(auth, email, password);
     }
 
     // login or sign in
     const login = (email, password) => {
-        return signInWithEmailAndPassword(auth, email, password)
+        setLoading(true);
+        return signInWithEmailAndPassword(auth, email, password);
     }
 
     // google sign in
@@ -34,6 +36,7 @@ const AuthProvider = ({children}) => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             console.log('inside auth state change', currentUser);
             setUser(currentUser);
+            setLoading(true);
         })
         return () => {
              unsubscribe();
