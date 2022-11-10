@@ -45,12 +45,20 @@ const router = createBrowserRouter([
             },
             {
                 path: '/service/:id',
-                loader:({params}) => fetch(`https://services-server-site.vercel.app/services/${params.id}`),
+                loader: ({ params }) => fetch(`https://services-server-site.vercel.app/services/${params.id}`),
                 element: <Service></Service>
             },
-            
+
         ]
+    },
+    {
+        path: "*",
+        element: <div className=" text-5xl pt-36 font-bold text-center mx-auto text-white">
+            <h1>404 Error</h1>
+            <h1>Page Not Found</h1>
+        </div>
     }
+
 ]);
 
 export default router;
