@@ -1,18 +1,9 @@
 import React from 'react';
 
-const MyReviewsRow = ({myReview}) => {
-    const { _id, serviceName, reviewer, message, image } = myReview;
+const MyReviewsRow = ({myReview, handleDelete}) => {
+    const { _id, serviceName, reviewer, message, image, status } = myReview;
 
-    const handleDelete = id => {
-        const proceed = window.confirm('Are your sure, you want to delete this review ?');
-        if(proceed){
-            fetch(`https://services-server-site.vercel.app/reviews/${id}`, {
-                method: 'DELETE'
-            })
-            .then(res => res.json())
-            .then(data => console.log(data))
-        }
-    }
+    
  
     return (
         
@@ -41,7 +32,8 @@ const MyReviewsRow = ({myReview}) => {
                 </td>
                 <td>Purple</td>
                 <th>
-                    <button className="btn btn-ghost btn-xs">details</button>
+                    <button 
+                    className="btn btn-ghost btn-xs">{status ? status : 'EDIT REVIEW'}</button>
                 </th>
             </tr>
         
