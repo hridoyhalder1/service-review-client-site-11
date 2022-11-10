@@ -1,1 +1,1 @@
-"*" Services website
+* Services website
