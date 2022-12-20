@@ -1,14 +1,24 @@
 import React, { useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import ServicesCard from './ServicesCard';
 
 const Services = () => {
     const [services, setServices] = useState([]);
+    const {loading} = useContext(AuthContext);
+    
     useEffect(() => {
         fetch('https://services-server-site.vercel.app/services')
             .then(res => res.json())
             .then(data => setServices(data))
-    }, [])
+    }, []);
+    if (loading) {
+        return <div className=' text-center mt-48 mb-24'>
+            <progress className="progress w-56 mx-auto bg-white"></progress>
+        </div>
+    }
+    
     return (
         <div>
             <div>

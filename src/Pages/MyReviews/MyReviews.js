@@ -34,13 +34,13 @@ const MyReviews = () => {
 
 
     return (
-        <div className="overflow-x-auto w-full mb-24">
+        <div className="overflow-x-auto w-full mb-24 ml-5">
+            <h1 className='text-4xl pb-5 mt-8 text-white'>My Reviews</h1>
             <table className="table w-full">
                 <thead>
                     <tr>
-                        
                         <th>Name</th>
-                        <th>Job</th>
+                        <th>Reviews</th>
                         <th>Message</th>
                     </tr>
                 </thead>

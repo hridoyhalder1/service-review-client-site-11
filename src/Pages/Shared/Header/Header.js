@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { toast } from 'react-hot-toast';
 import { FaUser } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
@@ -12,7 +13,8 @@ const Header = () => {
         logOut()
             .then(() => { })
             .catch(error => console.error(error));
-            navigate('/');
+            toast.success('LogOut Successfully!!!');
+            navigate('/login');
     }
 
     const menuItems = <>
@@ -39,7 +41,7 @@ const Header = () => {
 
     return (
         <div>
-            <div className="navbar bg-base-100 text-white">
+            <div className="navbar bg-base-100  ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
