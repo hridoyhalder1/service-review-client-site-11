@@ -1,26 +1,30 @@
 import React, { useContext } from 'react';
 import login1 from '../../assests/icon/login1.jpg';
 import { FaGoogle } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
+import { toast } from 'react-hot-toast';
 
 const Login = () => {
 
     const { login, providerLogin } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        // console.log(email, password);
 
         login(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
+                toast.success('Login Successfully!');
+                navigate('/');
             })
             .catch(error => console.error(error))
     }

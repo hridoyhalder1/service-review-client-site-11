@@ -7,7 +7,7 @@ const MyReviewsRow = ({myReview, handleDelete}) => {
  
     return (
         
-            <tr>
+            <tr className=' mb-24'>
                 <th>
                     <label>
                         <button onClick={() =>handleDelete(_id)} className=' btn btn-active'>X</button>
@@ -30,7 +30,6 @@ const MyReviewsRow = ({myReview, handleDelete}) => {
                     {message}
                     
                 </td>
-                <td>Purple</td>
                 <th>
                     <button 
                     className="btn btn-ghost btn-xs">{status ? status : 'EDIT REVIEW'}</button>

@@ -2,6 +2,7 @@ import React from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import { Link } from 'react-router-dom';
+import PrivateRoute from '../../Router/Routes/PrivateRoute';
 
 
 
@@ -22,9 +23,11 @@ const ServicesCard = ({ service }) => {
                     <p>{price}</p>
                     <p>{description.slice(0, 100)}....</p>
                     <div className="card-actions justify-end">
-                        <Link to={`/service/${_id}`}>
-                            <button className="btn btn-primary">Details</button>
-                        </Link>
+                        
+                            <Link to={`/service/${_id}`}>
+                                <button className="btn btn-primary">Details</button>
+                            </Link>
+                        
                     </div>
                 </div>
             </div>

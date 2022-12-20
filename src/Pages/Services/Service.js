@@ -94,7 +94,7 @@ const Service = () => {
                         <label className="label">
                             <span className="label-text">Name</span>
                         </label>
-                        <input type="text" name='name' defaultValue={user?.displayName} readOnly placeholder="your name" className="input input-bordered" />
+                        <input type="text" name='name' defaultValue={user?.displayName}  placeholder="your name" className="input input-bordered" />
                     </div>
                     <div className="form-control">
                         <label className="label">

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
+import { Link, useNavigate } from 'react-router-dom';
 import login from '../../assests/icon/login1.jpg';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
@@ -7,6 +8,7 @@ import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 const SignUp = () => {
 
     const {createUser} = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleSignUp = event => {
         event.preventDefault();
@@ -14,13 +16,15 @@ const SignUp = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name ,email, password);
+        // console.log(name ,email, password);
 
         createUser(email, password)
         .then( result => {
             const user = result.user;
             console.log(user);
             form.reset();
+            toast.success('Signup Successfully!')
+            navigate('/');
         })
         .catch( e => console.error(e));
     }
@@ -53,7 +57,7 @@ const SignUp = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="text" name='password' placeholder="password" className="input input-bordered" required />
+                            <input type="password" name='password' placeholder="password" className="input input-bordered" required />
 
                         </div>
                         <div className="form-control mt-6">

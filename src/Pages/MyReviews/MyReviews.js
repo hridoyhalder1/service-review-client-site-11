@@ -32,30 +32,15 @@ const MyReviews = () => {
         }
     }
 
-    // const handleStatusUpdate = id => {
-    //     fetch(`https://services-server-site.vercel.app/reviews/${id}`,{
-    //         method: 'PATCH',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify({status: 'UPDATE REVIEW'})
-    //     })
-    //     .then(res => res.json())
-    //     .then(data => {
-    //         console.log(data);
-    //     })
-    // }
-
 
     return (
-        <div className="overflow-x-auto w-full">
+        <div className="overflow-x-auto w-full mb-24">
             <table className="table w-full">
                 <thead>
                     <tr>
                         
                         <th>Name</th>
                         <th>Job</th>
-                        <th>Favorite Color</th>
                         <th>Message</th>
                     </tr>
                 </thead>

@@ -3,7 +3,7 @@ import React from 'react';
 const Blog = () => {
     return (
         <div className="accordion accordion-flush" id="accordionFlushExample">
-            <div className="accordion-item border-t-0 border-l-0 border-r-0 rounded-none bg-white border border-gray-200">
+            <div className="accordion-item border-t-0 border-l-0 border-r-0 rounded-none  border border-gray-200">
                 <h2 className="accordion-header mb-0" id="flush-headingOne">
                     <button className="accordion-button
     relative
@@ -60,7 +60,7 @@ const Blog = () => {
                     </div>
                 </div>
             </div>
-            <div className="accordion-item border-l-0 border-r-0 rounded-none bg-white border border-gray-200">
+            <div className="accordion-item border-l-0 border-r-0 rounded-none  border border-gray-200">
                 <h2 className="accordion-header mb-0" id="flush-headingTwo">
                     <button className="accordion-button
     collapsed
@@ -87,7 +87,7 @@ const Blog = () => {
                         Although JWTs can be encrypted to also provide secrecy between parties, we will focus on signed tokens. Signed tokens can verify the integrity of the claims contained within it, while encrypted tokens hide those claims from other parties. When tokens are signed using public/private key pairs, the signature also certifies that only the party holding the private key is the one that signed it.</div>
                 </div>
             </div>
-            <div className="accordion-item border-l-0 border-r-0 border-b-0 rounded-none bg-white border border-gray-200">
+            <div className="accordion-item border-l-0 border-r-0 border-b-0 rounded-none  border border-gray-200">
                 <h2 className="accordion-header mb-0" id="flush-headingThree">
                     <button className="accordion-button
     collapsed
@@ -116,7 +116,7 @@ const Blog = () => {
                         Javascript is a Scripting language. It is mostly abbreviated as JS. It can be said that Javascript is the updated version of the ECMA script. Javascript is a high-level programming language that uses the concept of Oops but it is based on prototype inheritance. </div>
                 </div>
             </div>
-            <div className="accordion-item border-l-0 border-r-0 border-b-0 rounded-none bg-white border border-gray-200">
+            <div className="accordion-item border-l-0 border-r-0 border-b-0 rounded-none  border border-gray-200">
                 <h2 className="accordion-header mb-0" id="flush-headingThree">
                     <button className="accordion-button
     collapsed

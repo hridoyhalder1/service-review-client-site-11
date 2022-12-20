@@ -1,17 +1,18 @@
 import React, { useContext } from 'react';
 import { FaUser } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 
 const Header = () => {
     const { logOut, user } = useContext(AuthContext);
-
+    const navigate = useNavigate();
     // log out auth setup
     const handleLogOut = () => {
         logOut()
             .then(() => { })
-            .catch(error => console.error(error))
+            .catch(error => console.error(error));
+            navigate('/');
     }
 
     const menuItems = <>

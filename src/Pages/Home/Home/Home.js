@@ -6,7 +6,7 @@ import Banner from '../Banner/Banner';
 
 const Home = () => {
     return (
-        <div>
+        <div className=' mx-auto'>
             <Banner></Banner>
             <Get></Get>
             <Services></Services>
